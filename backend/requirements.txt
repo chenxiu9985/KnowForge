@@ -1,0 +1,8 @@
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+pydantic>=2.7.4,<3
+langchain-core>=1,<2
+langgraph>=1,<2
+langchain-deepseek>=1,<2
+openai>=2.45,<4
+httpx>=0.27,<1

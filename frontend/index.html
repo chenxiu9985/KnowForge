@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KnowForge · 主题练习</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell brand-row">
+      <span class="brand">KnowForge</span>
+      <a href="/docs">接口文档</a>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="intro">
+      <h1>选一个主题，做三道题。</h1>
+      <p>答完查看分数和逐题解析，看看哪些知识点还需要复习。</p>
+    </div>
+
+    <div class="workspace">
+      <section class="panel controls" aria-labelledby="setup-title">
+        <h2 id="setup-title">新建练习</h2>
+        <p id="mode-summary" class="hint" role="status">正在读取出题模式…</p>
+        <form id="setup-form">
+          <label for="topic">学习主题</label>
+          <input id="topic" name="topic" type="text" maxlength="120" required disabled
+            placeholder="例如 Python asyncio" aria-describedby="mode-summary">
+          <div id="examples" class="examples" aria-label="示例主题"></div>
+
+          <div id="notes-field" hidden>
+            <label for="notes">参考资料 <span class="hint">（可选）</span></label>
+            <textarea id="notes" name="notes" rows="5" maxlength="4000"
+              placeholder="粘贴一段笔记，按资料内容出题"></textarea>
+          </div>
+
+          <button id="generate" class="primary" type="submit" disabled>生成练习</button>
+          <p id="setup-error" class="error" role="alert" hidden></p>
+        </form>
+      </section>
+
+      <section class="panel exercise" aria-labelledby="quiz-title">
+        <h2 id="quiz-title" tabindex="-1">答题区</h2>
+        <p id="empty-state" class="hint">选好学习主题，生成你的第一套练习。</p>
+        <p id="grade-summary" class="score" tabindex="-1" hidden></p>
+        <form id="answer-form" hidden>
+          <div id="questions"></div>
+          <button id="grade" class="primary" type="submit">提交答案</button>
+          <p id="grade-error" class="error" role="alert" hidden></p>
+        </form>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
